@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panteão - Ficha de Personagem</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="ficha-container">
+      <header class="ficha-header">
+        <div class="header-celtica"></div>
+        <h1>Panteão - Ficha de Personagem</h1>
+        <div class="header-celtica"></div>
+      </header>
+
+      <section class="top-info-section">
+        <aside class="image-sidebar">
+          <div class="image-border-celtic">
+            <label for="image-input" class="image-label">
+              <img
+                id="character-image"
+                src="https://via.placeholder.com/150x200.png?text=Imagem"
+                alt="Imagem do Personagem"
+              />
+              <input
+                type="file"
+                id="image-input"
+                accept="image/*"
+                style="display: none"
+              />
+            </label>
+          </div>
+          <div class="button-group">
+            <button id="export-button">Exportar Ficha (.json)</button>
+            <input
+              type="file"
+              id="import-file"
+              accept=".json"
+              style="display: none"
+            />
+            <button id="import-button">Importar Ficha (.json)</button>
+          </div>
+        </aside>
+
+        <div class="main-info-grid">
+          <div class="field-row">
+            <div class="field-group-inline">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" />
+            </div>
+            <div class="field-group-inline">
+              <label for="idade">Idade:</label>
+              <input
+                type="number"
+                id="idade"
+                name="idade"
+                class="no-spinners"
+              />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-group-inline">
+              <label for="linhagem">Linhagem:</label>
+              <input type="text" id="linhagem" name="linhagem" />
+            </div>
+            <div class="field-group-inline">
+              <label for="origem">Origem:</label>
+              <input type="text" id="origem" name="origem" />
+            </div>
+            <div class="field-group-inline">
+              <label for="divindade">Divindade:</label>
+              <input type="text" id="divindade" name="divindade" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field-group-inline">
+              <label for="classe">Classe:</label>
+              <select id="classe" name="classe">
+                <option value="Bárbaro">Bárbaro</option>
+                <option value="Bardo">Bardo</option>
+                <option value="Bruxo">Bruxo</option>
+                <option value="Caçador">Caçador</option>
+                <option value="Clérigo">Clérigo</option>
+                <option value="Guerreiro">Guerreiro</option>
+                <option value="Ladino">Ladino</option>
+                <option value="Lutador">Lutador</option>
+                <option value="Mago">Mago</option>
+                <option value="Pistoleiro">Pistoleiro</option>
+                <option value="Inquisidor">Inquisidor</option>
+                <option value="Duelista">Duelista</option>
+                <option value="Metamorfo">Metamorfo</option>
+                <option value="Guardião Rúnico">Guardião Rúnico</option>
+                <option value="Guardião Elemental">Guardião Elemental</option>
+              </select>
+            </div>
+            <div class="field-group-inline">
+              <label for="nivel">Nível:</label>
+              <input
+                type="number"
+                id="nivel"
+                name="nivel"
+                value="1"
+                class="no-spinners"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="atributos-e-iniciativa">
+        <h2>Atributos</h2>
+        <div class="atributos-grid">
+          <div class="atributo-box">
+            <label for="for">FOR:</label>
+            <input
+              type="number"
+              id="for"
+              name="for"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="atributo-box">
+            <label for="des">DES:</label>
+            <input
+              type="number"
+              id="des"
+              name="des"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="atributo-box">
+            <label for="con">CON:</label>
+            <input
+              type="number"
+              id="con"
+              name="con"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="atributo-box">
+            <label for="int">INT:</label>
+            <input
+              type="number"
+              id="int"
+              name="int"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="atributo-box">
+            <label for="sab">SAB:</label>
+            <input
+              type="number"
+              id="sab"
+              name="sab"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="atributo-box">
+            <label for="car">CAR:</label>
+            <input
+              type="number"
+              id="car"
+              name="car"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+        </div>
+        <div class="iniciativa-box">
+          <div class="iniciativa-field">
+            <label>Iniciativa:</label>
+            <input type="text" id="iniciativa-total" readonly />
+          </div>
+          <div class="iniciativa-field">
+            <label>Bónus:</label>
+            <input
+              type="number"
+              id="iniciativa-bonus"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="recursos">
+        <div class="vida-box">
+          <h3>Vida</h3>
+          <div class="recurso-valores">
+            <div class="valor-total">
+              <label>Total:</label>
+              <input type="text" id="vida-total" readonly />
+            </div>
+            <div class="valor-atual">
+              <label>Atual:</label>
+              <input type="number" id="vida-atual" class="no-spinners" />
+            </div>
+            <div class="valor-bonus">
+              <label>Bónus:</label>
+              <input
+                type="number"
+                id="vida-bonus"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="valor-temporario">
+              <label>Temporário:</label>
+              <input type="number" id="vida-temp" class="no-spinners" />
+            </div>
+          </div>
+        </div>
+
+        <div class="energia-box">
+          <h3>Energia</h3>
+          <div class="recurso-valores">
+            <div class="valor-total">
+              <label>Total:</label>
+              <input type="text" id="energia-total" readonly />
+            </div>
+            <div class="valor-atual">
+              <label>Atual:</label>
+              <input type="number" id="energia-atual" class="no-spinners" />
+            </div>
+            <div class="valor-bonus">
+              <label>Bónus:</label>
+              <input
+                type="number"
+                id="energia-bonus"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="valor-temporario">
+              <label>Temporário:</label>
+              <input type="number" id="energia-temp" class="no-spinners" />
+            </div>
+          </div>
+        </div>
+
+        <div class="sanidade-box">
+          <h3>Sanidade (Opcional)</h3>
+          <div class="recurso-valores">
+            <div class="valor-total">
+              <label>Total:</label>
+              <input
+                type="number"
+                id="sanidade-total"
+                class="no-spinners"
+                value="0"
+              />
+            </div>
+            <div class="valor-atual">
+              <label>Atual:</label>
+              <input
+                type="number"
+                id="sanidade-atual"
+                class="no-spinners"
+                value="0"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="defesas">
+        <h3>Defesas</h3>
+        <div class="defesas-grid">
+          <div class="ca-box">
+            <label>CA Base:</label>
+            <input type="text" id="ca-base" readonly />
+          </div>
+          <div class="ca-box">
+            <label>CA Armadura:</label>
+            <input
+              type="number"
+              id="ca-armadura"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="ca-box">
+            <label>CA Extra:</label>
+            <input type="number" id="ca-extra" value="0" class="no-spinners" />
+          </div>
+          <div class="ca-box">
+            <label>CA Total:</label>
+            <input type="text" id="ca-total" readonly />
+          </div>
+        </div>
+        <div class="rd-grid">
+          <h4>RD Física</h4>
+          <div class="rd-types">
+            <div class="rd-type-box">
+              <label>Geral:</label
+              ><input
+                type="number"
+                id="rd-fisica-geral"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Corte:</label
+              ><input
+                type="number"
+                id="rd-fisica-corte"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Impacto:</label
+              ><input
+                type="number"
+                id="rd-fisica-impacto"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Perfurante:</label
+              ><input
+                type="number"
+                id="rd-fisica-perfurante"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+          </div>
+          <h4>RD Mágica</h4>
+          <div class="rd-types">
+            <div class="rd-type-box">
+              <label>Fogo:</label
+              ><input
+                type="number"
+                id="rd-magica-fogo"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Gelo:</label
+              ><input
+                type="number"
+                id="rd-magica-gelo"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Elétrico:</label
+              ><input
+                type="number"
+                id="rd-magica-eletrico"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Veneno:</label
+              ><input
+                type="number"
+                id="rd-magica-veneno"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Necrótico:</label
+              ><input
+                type="number"
+                id="rd-magica-necrotico"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Luz:</label
+              ><input
+                type="number"
+                id="rd-magica-luz"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="rd-type-box">
+              <label>Psíquico:</label
+              ><input
+                type="number"
+                id="rd-magica-psiquico"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ataques-box">
+        <h3>Ataques</h3>
+        <div class="ataques-grid">
+          <div class="ataque-col">
+            <label>Arma 1</label>
+            <input type="text" placeholder="Nome" />
+            <input type="text" placeholder="Dano" />
+            <input type="text" placeholder="Tipo" />
+            <input type="text" placeholder="Crítico" />
+          </div>
+          <div class="ataque-col">
+            <label>Arma 2</label>
+            <input type="text" placeholder="Nome" />
+            <input type="text" placeholder="Dano" />
+            <input type="text" placeholder="Tipo" />
+            <input type="text" placeholder="Crítico" />
+          </div>
+        </div>
+      </section>
+
+      <section class="pericias">
+        <h3>Perícias</h3>
+        <div class="pericias-list">
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-acrobacia-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Acrobacia (Des)</label
+            ><input
+              type="number"
+              id="pericia-acrobacia-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-arcasnismo-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Arcanismo (Int)</label
+            ><input
+              type="number"
+              id="pericia-arcasnismo-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-atletismo-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Atletismo (For)</label
+            ><input
+              type="number"
+              id="pericia-atletismo-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-conhecer-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Conhecer (Int)</label
+            ><input
+              type="number"
+              id="pericia-conhecer-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-diplomacia-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Diplomacia (Car)</label
+            ><input
+              type="number"
+              id="pericia-diplomacia-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-enganar-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Enganar (Car/Des)</label
+            ><input
+              type="number"
+              id="pericia-enganar-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-fortitude-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Fortitude (Con)</label
+            ><input
+              type="number"
+              id="pericia-fortitude-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-furtividade-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Furtividade (Des)</label
+            ><input
+              type="number"
+              id="pericia-furtividade-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-intimidar-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Intimidar (Car/For)</label
+            ><input
+              type="number"
+              id="pericia-intimidar-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-investigar-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Investigar (Int)</label
+            ><input
+              type="number"
+              id="pericia-investigar-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-lutar-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Lutar (For)</label
+            ><input
+              type="number"
+              id="pericia-lutar-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-natureza-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Natureza (Sab)</label
+            ><input
+              type="number"
+              id="pericia-natureza-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-oficio-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Ofício (For/Int)</label
+            ><input
+              type="number"
+              id="pericia-oficio-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-persentir-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Pressentir (Sab)</label
+            ><input
+              type="number"
+              id="pericia-persentir-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-pontaria-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Pontaria (Des)</label
+            ><input
+              type="number"
+              id="pericia-pontaria-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-reflexos-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Reflexos (Des)</label
+            ><input
+              type="number"
+              id="pericia-reflexos-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-religiao-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Religião (Sab)</label
+            ><input
+              type="number"
+              id="pericia-religiao-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+          <div class="pericia-item">
+            <input
+              type="number"
+              id="pericia-vontade-mod"
+              class="pericia-mod no-spinners"
+              readonly
+            /><label>Vontade (Sab)</label
+            ><input
+              type="number"
+              id="pericia-vontade-base"
+              value="0"
+              class="no-spinners"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="outras-info-grid">
+        <div class="inventario-box">
+          <h3>Inventário</h3>
+          <div class="inventario-info">
+            <div class="field-group">
+              <label for="peso">Peso (Kg):</label>
+              <input
+                type="number"
+                id="peso"
+                name="peso"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="field-group">
+              <label for="ouro">Ouro (g):</label>
+              <input
+                type="number"
+                id="ouro"
+                name="ouro"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+            <div class="field-group">
+              <label for="ph">PH:</label>
+              <input
+                type="number"
+                id="ph"
+                name="ph"
+                value="0"
+                class="no-spinners"
+              />
+            </div>
+          </div>
+          <div class="inventario-items">
+            <label for="inventario-lista">Lista de Itens:</label>
+            <textarea
+              id="inventario-lista"
+              name="inventario-lista"
+              rows="10"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="habilidades-box">
+          <h3>Habilidades</h3>
+          <div class="habilidades-list">
+            <h4>Habilidades de Classe</h4>
+            <textarea id="habilidades-classe" rows="5"></textarea>
+            <h4>Habilidades de Linhagem e Origem</h4>
+            <textarea id="habilidades-linhagem-origem" rows="5"></textarea>
+            <h4>Habilidades de Divindade</h4>
+            <textarea id="habilidades-divindade" rows="5"></textarea>
+            <h4>Talentos</h4>
+            <textarea id="habilidades-talentos" rows="5"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="magias-box">
+        <h3>Magias</h3>
+        <div class="magias-header">
+          <div class="dt-box">
+            <label for="dt-atributo">DT Atributo:</label>
+            <select id="dt-atributo" name="dt-atributo">
+              <option value="for">Força</option>
+              <option value="des">Destreza</option>
+              <option value="con">Constituição</option>
+              <option value="int" selected>Inteligência</option>
+              <option value="sab">Sabedoria</option>
+              <option value="car">Carisma</option>
+            </select>
+          </div>
+          <div class="dt-box">
+            <label for="dt-magias">DT Magias:</label>
+            <input type="text" id="dt-magias" readonly />
+          </div>
+          <div class="circulo-box">
+            <label for="circulo">Círculo:</label>
+            <input type="number" id="circulo" value="1" class="no-spinners" />
+          </div>
+        </div>
+        <div class="magias-list">
+          <textarea
+            id="lista-magias"
+            rows="10"
+            placeholder="Insira aqui as suas magias por círculo."
+          ></textarea>
+        </div>
+      </section>
+
+      <footer class="ficha-footer">
+        <div class="footer-celtica"></div>
+        <button id="clear-button" class="clear-button-style">
+          Limpar Ficha
+        </button>
+      </footer>
+    </div>
+
+    <div id="confirm-modal-overlay" class="modal-overlay hidden">
+      <div class="modal-content">
+        <h2>Confirmar Limpeza</h2>
+        <p>
+          Tem a certeza de que deseja limpar toda a ficha? Esta ação não pode
+          ser desfeita.
+        </p>
+        <div class="modal-buttons">
+          <button id="confirm-yes-button" class="modal-button-yes">
+            Sim, Limpar
+          </button>
+          <button id="confirm-no-button" class="modal-button-no">
+            Não, Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
