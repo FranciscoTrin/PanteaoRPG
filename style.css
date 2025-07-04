@@ -535,3 +535,25 @@ input.no-spinners {
   cursor: pointer;
   font-weight: bold;
   border: none;
+  transition: transform 0.1s ease;
+}
+
+.modal-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.modal-button-yes {
+  background-color: #8c2a2a;
+  color: #e0e0e0;
+  border: 1px solid #c95a5a;
+}
+
+.modal-button-no {
+  background-color: #4a4a4a;
+  color: #e0e0e0;
+  border: 1px solid #777;
+}
+
+.hidden {
+  display: none; /* Classe para esconder o modal */
+}
