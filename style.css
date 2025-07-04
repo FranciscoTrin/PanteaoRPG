@@ -45,12 +45,11 @@ body {
 
 .image-border-celtic {
     width: 100%;
-    border: 5px solid transparent;
-    border-image: url('https://i.imgur.com/83p1Xb0.png') 30 round; /* Replace with your Celtic border image */
-    border-image-slice: 30;
-    border-image-width: 30px;
-    padding: 10px;
+    /* Uma cor sólida que combina com os detalhes celtas do cabeçalho */
+    border: 8px solid #6d4c41; 
+    padding: 4px;
     box-sizing: border-box;
+    background-color: #121212; 
 }
 
 .image-label {
@@ -536,25 +535,3 @@ input.no-spinners {
   cursor: pointer;
   font-weight: bold;
   border: none;
-  transition: transform 0.1s ease;
-}
-
-.modal-buttons button:hover {
-    transform: scale(1.05);
-}
-
-.modal-button-yes {
-  background-color: #8c2a2a;
-  color: #e0e0e0;
-  border: 1px solid #c95a5a;
-}
-
-.modal-button-no {
-  background-color: #4a4a4a;
-  color: #e0e0e0;
-  border: 1px solid #777;
-}
-
-.hidden {
-  display: none; /* Classe para esconder o modal */
-}
