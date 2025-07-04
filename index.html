@@ -79,25 +79,25 @@
           </div>
           <div class="field-row">
             <div class="field-group-inline">
-              <label for="classe">Classe:</label>
-              <select id="classe" name="classe">
-                <option value="Bárbaro">Bárbaro</option>
-                <option value="Bardo">Bardo</option>
-                <option value="Bruxo">Bruxo</option>
-                <option value="Caçador">Caçador</option>
-                <option value="Clérigo">Clérigo</option>
-                <option value="Guerreiro">Guerreiro</option>
-                <option value="Ladino">Ladino</option>
-                <option value="Lutador">Lutador</option>
-                <option value="Mago">Mago</option>
-                <option value="Pistoleiro">Pistoleiro</option>
-                <option value="Inquisidor">Inquisidor</option>
-                <option value="Duelista">Duelista</option>
-                <option value="Metamorfo">Metamorfo</option>
-                <option value="Guardião Rúnico">Guardião Rúnico</option>
-                <option value="Guardião Elemental">Guardião Elemental</option>
-              </select>
-            </div>
+                <label for="classe">Classe:</label>
+                <select id="classe" name="classe">
+                  <option value="Bárbaro">Bárbaro</option>
+                  <option value="Bardo">Bardo</option>
+                  <option value="Bruxo">Bruxo</option>
+                  <option value="Caçador">Caçador</option>
+                  <option value="Clérigo">Clérigo</option>
+                  <option value="Guerreiro">Guerreiro</option>
+                  <option value="Ladino">Ladino</option>
+                  <option value="Lutador">Lutador</option>
+                  <option value="Mago">Mago</option>
+                  <option value="Pistoleiro">Pistoleiro</option>
+                  <option value="Inquisidor">Inquisidor</option>
+                  <option value="Duelista">Duelista</option>
+                  <option value="Metamorfo">Metamorfo</option>
+                  <option value="Guardião Rúnico">Guardião Rúnico</option>
+                  <option value="Guardião Elemental">Guardião Elemental</option>
+                </select>
+              </div>
             <div class="field-group-inline">
               <label for="nivel">Nível:</label>
               <input
@@ -195,79 +195,59 @@
 
       <section class="recursos">
         <div class="vida-box">
-          <h3>Vida</h3>
-          <div class="recurso-valores">
-            <div class="valor-total">
-              <label>Total:</label>
-              <input type="text" id="vida-total" readonly />
-            </div>
-            <div class="valor-atual">
-              <label>Atual:</label>
-              <input type="number" id="vida-atual" class="no-spinners" />
-            </div>
-            <div class="valor-bonus">
-              <label>Bónus:</label>
-              <input
-                type="number"
-                id="vida-bonus"
-                value="0"
-                class="no-spinners"
-              />
-            </div>
-            <div class="valor-temporario">
-              <label>Temporário:</label>
-              <input type="number" id="vida-temp" class="no-spinners" />
+            <h3>Vida</h3>
+            <div class="recurso-valores">
+              <div class="valor-total">
+                <label>Total:</label>
+                <input type="text" id="vida-total" readonly />
+              </div>
+              <div class="valor-atual">
+                <label>Atual:</label>
+                <input type="number" id="vida-atual" class="no-spinners" />
+              </div>
+              <div class="valor-bonus">
+                <label>Bónus:</label>
+                <input type="number" id="vida-bonus" value="0" class="no-spinners" />
+              </div>
+              <div class="valor-temporario">
+                <label>Temporário:</label>
+                <input type="number" id="vida-temp" class="no-spinners" />
+              </div>
             </div>
           </div>
-        </div>
 
         <div class="energia-box">
-          <h3>Energia</h3>
-          <div class="recurso-valores">
-            <div class="valor-total">
-              <label>Total:</label>
-              <input type="text" id="energia-total" readonly />
-            </div>
-            <div class="valor-atual">
-              <label>Atual:</label>
-              <input type="number" id="energia-atual" class="no-spinners" />
-            </div>
-            <div class="valor-bonus">
-              <label>Bónus:</label>
-              <input
-                type="number"
-                id="energia-bonus"
-                value="0"
-                class="no-spinners"
-              />
-            </div>
-            <div class="valor-temporario">
-              <label>Temporário:</label>
-              <input type="number" id="energia-temp" class="no-spinners" />
+            <h3>Energia</h3>
+            <div class="recurso-valores">
+              <div class="valor-total">
+                <label>Total:</label>
+                <input type="text" id="energia-total" readonly />
+              </div>
+              <div class="valor-atual">
+                <label>Atual:</label>
+                <input type="number" id="energia-atual" class="no-spinners" />
+              </div>
+              <div class="valor-bonus">
+                <label>Bónus:</label>
+                <input type="number" id="energia-bonus" value="0" class="no-spinners" />
+              </div>
+              <div class="valor-temporario">
+                <label>Temporário:</label>
+                <input type="number" id="energia-temp" class="no-spinners" />
+              </div>
             </div>
           </div>
-        </div>
 
         <div class="sanidade-box">
           <h3>Sanidade (Opcional)</h3>
           <div class="recurso-valores">
             <div class="valor-total">
               <label>Total:</label>
-              <input
-                type="number"
-                id="sanidade-total"
-                class="no-spinners"
-                value="0"
-              />
+              <input type="number" id="sanidade-total" class="no-spinners" value="0" />
             </div>
             <div class="valor-atual">
               <label>Atual:</label>
-              <input
-                type="number"
-                id="sanidade-atual"
-                class="no-spinners"
-                value="0"
-              />
+              <input type="number" id="sanidade-atual" class="no-spinners" value="0"/>
             </div>
           </div>
         </div>
@@ -779,26 +759,17 @@
 
       <footer class="ficha-footer">
         <div class="footer-celtica"></div>
-        <button id="clear-button" class="clear-button-style">
-          Limpar Ficha
-        </button>
+        <button id="clear-button" class="clear-button-style">Limpar Ficha</button>
       </footer>
     </div>
 
     <div id="confirm-modal-overlay" class="modal-overlay hidden">
       <div class="modal-content">
         <h2>Confirmar Limpeza</h2>
-        <p>
-          Tem a certeza de que deseja limpar toda a ficha? Esta ação não pode
-          ser desfeita.
-        </p>
+        <p>Tem a certeza de que deseja limpar toda a ficha? Esta ação não pode ser desfeita.</p>
         <div class="modal-buttons">
-          <button id="confirm-yes-button" class="modal-button-yes">
-            Sim, Limpar
-          </button>
-          <button id="confirm-no-button" class="modal-button-no">
-            Não, Cancelar
-          </button>
+          <button id="confirm-yes-button" class="modal-button-yes">Sim, Limpar</button>
+          <button id="confirm-no-button" class="modal-button-no">Não, Cancelar</button>
         </div>
       </div>
     </div>
